@@ -1,0 +1,4 @@
+struct BenimMesajim {
+    unsigned long mesaj_numarasi;
+    string icerik;
+};

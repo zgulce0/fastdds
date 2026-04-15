@@ -1,0 +1,18 @@
+services:
+  # BİRİNCİ ODA: Konuşan Adam
+  konusan_oda:
+    build: . 
+    container_name: fastdds_yayinici
+    command: ./konusan_adam 
+    ipc: host 
+    network_mode: host 
+
+  # İKİNCİ ODA: Dinleyen Adam
+  dinleyen_oda:
+    build: .
+    container_name: fastdds_abone
+    command: ./dinleyen_adam 
+    ipc: host 
+    network_mode: host
+    depends_on:
+      - konusan_oda
